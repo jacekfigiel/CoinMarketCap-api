@@ -12,12 +12,10 @@ class Crypto:
         self.volume_24h = volume_24h
         self.circulating_supply = circulating_supply
 
-    def __str__(self):
-        return f"{self.symbol}, {self.name}, {self.price}$ "\
-               f"{self.percent_change_24h}%, {self.percent_change_7d}% "\
-                f"{self.market_cap}, {self.volume_24h}, {self.circulating_supply}"
-
-
+    def __getitem__(self, item):
+        return f"{self.symbol}, {self.name}, \n{self.price}$ " \
+               f"\n{self.percent_change_24h}%, \n{self.percent_change_7d}% " \
+               f"\n{self.market_cap}$, \n{self.volume_24h}$, \n{self.circulating_supply} {self.symbol}"
 
 
 

@@ -3,16 +3,18 @@ from json_parser import parse
 
 
 class FindTheWrightCrypto:
-    sorted_crypto: list[Crypto]
 
     def __init__(self):
         self.cryptos = parse()
 
     def find_crypto(self):
-        x = input("Give a crypto name:")
-        for x in self.cryptos:# nie wiem jak ugrysc rozpakowywanie listy
-            if x.symbol in x.symbol:
-                print(x.symbol)
+        ask = input("Give a symbol of crypto:\n").upper()
+        for x in self.cryptos:
+            if ask in x.symbol:
+                print(x[ask])
+            elif ask not in x.symbol:
+                print(f"No crypro with name {ask}")
 
 
 
+FindTheWrightCrypto().find_crypto()
